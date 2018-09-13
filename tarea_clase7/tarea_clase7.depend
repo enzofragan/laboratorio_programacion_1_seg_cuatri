@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1536851069 source:c:\users\alumno\desktop\laboratorio_programacion_1_seg_cuatri\tarea_clase7\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"funciones.h"
+
+1536851020 c:\users\alumno\desktop\laboratorio_programacion_1_seg_cuatri\tarea_clase7\funciones.h
+
+1536851020 source:c:\users\alumno\desktop\laboratorio_programacion_1_seg_cuatri\tarea_clase7\funciones.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<ctype.h>
+	"funciones.h"
+

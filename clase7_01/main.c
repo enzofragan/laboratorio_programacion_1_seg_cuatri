@@ -3,7 +3,8 @@
 #include <string.h>
 #include <ctype.h>
 #define T 3
-/*a) cargar datos (carga aleatoria)
+/*
+a) cargar datos (carga aleatoria)
 b) modificar:  se ingresa el legajo, lo busca y si lo encuentra modifica la nota1
 c) informes
 1- los alumnos con promedio 6 o mas
@@ -56,7 +57,7 @@ int cargarAlumnos (char nombre[][50],int nota1[],int nota2[],int nota3[],float p
 {
     int i;
 
-        for(i=0; i<T; i++)
+    for(i=0; i<T; i++)
     {
         printf("ingrese su nombre completo: ");
         fflush(stdin);
