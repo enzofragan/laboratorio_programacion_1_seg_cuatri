@@ -12,21 +12,23 @@ typedef struct
 
 void mostrarAlumno(eAlumno);
 eAlumno cargarAlumno();
+void cargarListado(eAlumno [],int );
+void mostrarListado(eAlumno [],int );
 
 int main()
 {
-    eAlumno otroAlumno;
+    eAlumno otroAlumno[3];
 
-    otroAlumno=cargarAlumno();
+    cargarListado(otroAlumno,3);
 
-    mostrarAlumno(otroAlumno);
+    mostrarListado(otroAlumno,3);
 
     return 0;
 }
 
 void mostrarAlumno(eAlumno alumnoParametro)
 {
-    printf("%d--%s--%.2f",alumnoParametro.legajo,alumnoParametro.nombre,alumnoParametro.promedio);
+    printf("%d--%s--%.2f\n",alumnoParametro.legajo,alumnoParametro.nombre,alumnoParametro.promedio);
 }
 
 eAlumno cargarAlumno()
@@ -44,4 +46,24 @@ eAlumno cargarAlumno()
     scanf("%f",&miAlumno.promedio);
 
     return miAlumno;
+}
+void cargarListado(eAlumno listado[],int capacidad)
+{
+    int i;
+
+    for(i=0;i<capacidad;i++)
+    {
+        listado[i]=cargarAlumno();
+    }
+
+}
+
+void mostrarListado(eAlumno listado[],int tam)
+{
+    int i;
+
+    for(i=0;i<tam;i++)
+    {
+        mostrarAlumno(listado[i]);
+    }
 }
