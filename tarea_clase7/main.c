@@ -12,6 +12,7 @@ int main()
     int nota2[T];
     int nota3[T];
     float promedio[T];
+    char sexo;
     int max;
     int min;
     int aprobados;
@@ -22,14 +23,26 @@ int main()
     int opcion;
     char seguir='s';
 
-    opcion=menu();
+    do{
 
-    switch(opcion)
-    {
-        case 1:
-            cargar=
-            break;
-    }
+        opcion=menu();
+
+        switch(opcion)
+        {
+            case 1:
+                cargar=cargarAlumnos(nombreCompleto,sexo,nota1,nota2,nota3,promedio,legajo,T);
+                if(cargar==1)
+                {
+                    printf("la cargar se completo\n");
+                    system("pause");
+                    system("cls");
+                }
+                break;
+            case 9:
+                seguir='n';
+                break;
+        }
+    } while(seguir=='s');
 
     return 0;
 }

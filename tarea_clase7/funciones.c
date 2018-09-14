@@ -8,7 +8,7 @@ int menu()
 {
     int opcion;
 
-    printf("1- \n");
+    printf("1- cargar alumno\n");
     printf("2- \n");
     printf("3- \n");
     printf("4- \n");
@@ -18,36 +18,50 @@ int menu()
     printf("8- \n");
     printf("9- Salir\n");
 
-    opcion=getInt("ingrese una opcion valida ");
+    opcion=getInt("","ingrese una opcion valida ");
 
     return opcion;
 }
 
-int cargarAlumnos(char nombre[][50],int nota1[],int nota2[],int nota3[],float promedio[],int legajo[],int tam[])
+int cargarAlumnos(char nombre[][50],char sexo,int nota1[],int nota2[],int nota3[],float promedio[],int legajo[],int tam[])
 {
     int pos;
+    int ret=-1;
 
-        printf("ingrese su nombre completo: ");
-        fflush(stdin);
-        gets(nombre[i]);
+    system("pause");
+    system("cls");
 
-        printf("ingrese nota 1: ");
-        scanf("%d",&nota1[i]);
+    printf("ingrese la posicion del dato: ");
+    scanf("%d",&pos);
 
-        printf("ingrese nota 2: ");
-        scanf("%d",&nota2[i]);
+    if(pos>0)
+    {
+       legajo[pos-1]=getInt("ingrese un legajo: ","ingrese una dato valido");
 
-        printf("ingrese nota 3: ");
-        scanf("%d",&nota3[i]);
+        getString("ingrese su nombre: ","ingrese una dato valido",nombre[pos-1]);
 
-        promedio[i] = calcularPromedio(nota1[i],nota2[i],nota3[i]);
+        sexo=getChar("ingrese su sexo: m(hombre) o f(mujer)","ingrese una dato valido");
 
+        nota1[pos-1]=getInt("ingrese la primera nota: ","ingrese una dato valido");
+
+        nota2[pos-1]=getInt("ingrese la segunda nota: ","ingrese una dato valido");
+
+        nota3[pos-1]=getInt("ingrese la tecera nota: ","ingrese una dato valido");
+
+        promedio[pos-1]=calcularPromedio(nota1[pos-1],nota2[pos-1],nota3[pos-1]);
+
+        ret=1;
+    }
+
+    return ret;
 }
 
-int getInt(char error[])
+int getInt(char mensaje[],char error[])
 {
     int aux;
     char buffer[64];
+    printf("%s",mensaje);
+    fflush(stdin);
     scanf("%s",buffer);
     while(esNumerica(buffer)==-1)
     {
@@ -74,4 +88,59 @@ int esNumerica(char* cadena)
         }
     }
     return 1;
+}
+char getString(char mensaje[],char error[],char caracter[])
+{
+    printf("%s",mensaje);
+    fflush(stdin);
+    gets(caracter);
+    while(esLetra(caracter)==-1)
+    {
+        printf("%s",error);
+        fflush(stdin);
+        gets(caracter);
+    }
+
+    return caracter;
+}
+int esLetra(char* cadena)
+{
+    int i=0;
+    if(cadena!=NULL)
+    {
+        while(cadena[i]!='\0')
+        {
+            if(!(isalpha(cadena[i])))
+            {
+                return -1;
+            }
+            i++;
+        }
+    }
+    return 1;
+}
+char getChar(char mensaje[],char error[])
+{
+    char auxiliar;
+    char buffer[64];
+    printf("%s",mensaje);
+    fflush(stdin);
+    scanf("%s",buffer);
+    while(esLetra(buffer)==-1)
+    {
+        printf("%s",error);
+        fflush(stdin);
+        scanf("%s",buffer);
+    }
+    auxiliar=buffer;
+
+    return auxiliar;
+}
+float calcularPromedio(int nota1,int nota2,int nota3)
+{
+    float promedio;
+
+    promedio = (float)(nota1 + nota2 + nota3)/3;
+
+    return promedio;
 }

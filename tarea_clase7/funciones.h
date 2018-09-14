@@ -2,8 +2,12 @@
 #define FUNCIONES_H_INCLUDED
 
 int menu();
-int getInt(char []);
+int getInt(char [],char []);
 int esNumerica(char* );
-int cargarAlumnos(char [][50],int [],int [],int [],float [],int [],int []);
+int cargarAlumnos(char [][50],char ,int [],int [],int [],float [],int [],int []);
+char getString(char [],char [],char []);
+int esLetra(char* );
+char getChar(char [],char []);
+float calcularPromedio(int ,int ,int );
 
 #endif // FUNCIONES_H_INCLUDED
