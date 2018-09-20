@@ -18,10 +18,26 @@ void mostrarListado(eAlumno [],int );
 int main()
 {
     eAlumno otroAlumno[3];
+    int opcion;
 
-    cargarListado(otroAlumno,3);
+    do
+    {
+        printf("1.cargar\n");
+        printf("2.mostrar\n");
+        printf("10.salir\n");
+        printf("elija una opcion: \n");
+        scanf("%d",&opcion);
 
-    mostrarListado(otroAlumno,3);
+        switch(opcion)
+        {
+            case 1:
+                cargarListado(otroAlumno,3);
+                break;
+            case 2:
+                mostrarListado(otroAlumno,3);
+                break;
+        }
+    }while(opcion!=10);
 
     return 0;
 }
