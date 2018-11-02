@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1541165536 source:c:\users\alumno\desktop\laboratorio_programacion_1_seg_cuatri\clase 20\main.c
+	<stdio.h>
+	<stdlib.h>
+	"empleado.h"
+
+1541164626 c:\users\alumno\desktop\laboratorio_programacion_1_seg_cuatri\clase 20\empleado.h
+
+1541165554 source:c:\users\alumno\desktop\laboratorio_programacion_1_seg_cuatri\clase 20\empleado.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	"empleado.h"
+
